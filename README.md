@@ -3,7 +3,7 @@
 次のURLにアクセスすると、良い感じにリダイレクトします。
 
 ```plain
-https://sudame.github.io/sonar-cloud-today?id=<YOUR-PROJECT-ID>&offset=<NUMBER>&TYPE=<issue|activity>
+https://sudame.github.io/sonar-cloud-today?id=<YOUR-PROJECT-ID>&offset=<NUMBER>&type=<issue|activity>
 ```
 
 ## id
