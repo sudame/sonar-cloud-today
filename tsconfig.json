@@ -1,0 +1,7 @@
+{
+  "extends": "@tsconfig/strictest",
+  "compilerOptions": {
+    "outDir": "public"
+  },
+  "include": ["src/index.ts"]
+}
