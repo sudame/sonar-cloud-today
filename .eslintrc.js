@@ -9,5 +9,6 @@ module.exports = {
     sourceType: "module",
     project: "./tsconfig.dev.json",
   },
+  iggnorePatterns: ["node_modules/", "public/"],
   rules: {},
 };
