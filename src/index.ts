@@ -20,6 +20,7 @@ function main(): void {
     showWarning("IDが指定されませんでした");
     return;
   }
+  const safeId = id.replace(/[^a-zA-Z0-9\-_]/g, "");
 
   const offest = parseInt(searchParams.get("offset") ?? "1", 10);
 
@@ -43,11 +44,11 @@ function main(): void {
   let href: string;
   switch (type) {
     case "issue": {
-      href = `https://sonarcloud.io/project/issues?createdAfter=${from}&createdBefore=${to}&id=${id}`;
+      href = `https://sonarcloud.io/project/issues?createdAfter=${from}&createdBefore=${to}&id=${safeId}`;
       break;
     }
     case "activity": {
-      href = `https://sonarcloud.io/project/activity?from=${from}&to=${to}&id=${id}`;
+      href = `https://sonarcloud.io/project/activity?from=${from}&to=${to}&id=${safeId}`;
       break;
     }
   }
