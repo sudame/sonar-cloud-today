@@ -10,14 +10,6 @@ function setTitle(type: "issue" | "activity"): void {
   });
 }
 
-/** Date型を yyyy-mm-dd 形式で返す */
-function toYYYYMMDD(date: Date): string {
-  const y = date.getFullYear();
-  const m = date.getMonth() + 1;
-  const d = date.getDate();
-  return `${y}-${m.toString().padStart(2, "0")}-${d.toString().padStart(2, "0")}`;
-}
-
 function main(): void {
   const searchParams = new URLSearchParams(window.location.search);
 
@@ -46,8 +38,8 @@ function main(): void {
   const fromDate = new Date();
   fromDate.setDate(toDate.getDate() - offest);
 
-  const to = toYYYYMMDD(toDate);
-  const from = toYYYYMMDD(fromDate);
+  const to = toDate.toISOString();
+  const from = fromDate.toISOString();
 
   let href: string;
   switch (type) {
